@@ -38,6 +38,12 @@ Defina em `:root`:
 - `--surface: #EDEDED`
 - `--accent: #007AFF` (usar pouco)
 - `--warn: #FF7A00` (quase nunca)
+- `--success: #34C759` (para produtos/ícones)
+- `--purple: #AF52DE` (para produtos/ícones)
+- `--accent-light: #E5F2FF` (para badges)
+- `--warn-light: #FFF3E5` (para badges)
+- `--success-light: #E8F8EC` (para badges)
+- `--purple-light: #F3E5FF` (para badges)
 
 Regra: 80% preto/branco/cinzas. Azul/laranja apenas como foco. Contraste WCAG AA.
 
@@ -61,9 +67,13 @@ Regra: 80% preto/branco/cinzas. Azul/laranja apenas como foco. Contraste WCAG AA
 
 ### Componentes
 
-- Botões: altura ≥ 44px, raio 8px, padding lateral 24px
-- Cards: fundo `--surface`, raio 12px, sombra sutil, padding 32px
-- Ícones (se usar): lineares, discretos, nunca decorativos
+- Botões: altura ≥ 44px, raio 24px (rounded), padding lateral 24px
+- Cards: fundo `--surface`, raio 24px (seções) ou 20px (produtos), sombra sutil, padding 32px (seções) ou 24px (produtos)
+- Product cards: fundo `--bg`, borda 1px `--surface`, hover com borda `--accent`, transform translateY(-4px)
+- Badges: inline-flex, raio 12px, padding 4px 12px, font-size 12px, uppercase, letter-spacing 0.5px
+- Product icons: 40x40px, raio 12px, cores dos produtos
+- Tags: inline-block, raio 8px, padding 6px 12px, font-size 12px, cores temáticas
+- Ícones: Lucide Icons, lineares, discretos, nunca decorativos
 
 ### Motion
 
@@ -80,7 +90,7 @@ Curto, direto, humano. Sem corporativês.
 - `#manifesto` Manifesto
 - `#o-que-fazemos` O que fazemos
 - `#como-ajudamos` Como ajudamos
-- `#open-source` Open Source
+- `#produtos` Produtos
 - `#sob-medida` Software sob medida
 - `#contato` Contato
 - Footer
@@ -90,30 +100,48 @@ Curto, direto, humano. Sem corporativês.
 ### Header
 
 - Logo tipográfico: **thinkng**
-- Links: Manifesto · O que fazemos · Como ajudamos · Open Source · Sob medida · Contato
-- CTA pequeno: **Falar com a Thinkng**
+- Links: Manifesto · O que fazemos · Como ajudamos · Produtos · Contato
+- CTA pequeno: **Falar com a thnkng.in**
 
 ### Hero
 
 H1: **Tornamos a tecnologia invisível.**  
 Sub: **Design, código e propósito. Do briefing ao deploy. Sem ruído.**  
-CTA primário: **Falar com a Thinkng**  
-CTA secundário: **Ver Open Source**  
+CTA primário: **Falar com a thnkng.in**  
+CTA secundário: **Nossos Produtos**  
 Microcopy opcional: **Menos ferramenta. Mais significado.**
 
 ### Manifesto
 
-Não estamos aqui para construir mais um sistema.  
+Não estamos aqui para construir mais tecnologia.  
 Estamos aqui para reduzir atrito.
 
 A boa tecnologia não se exibe.  
 Ela desaparece.
 
-O que é complexo demais para usar, falhou.  
-O que é bonito mas não funciona, também.
+O que precisa ser explicado demais falhou.  
+O que é bonito, mas não funciona, também.
 
-Nós perseguimos o óbvio.  
-Até ele parecer inevitável.
+Design não é estética.  
+É decisão.
+
+Código não é quantidade.  
+É clareza.
+
+Propósito não é discurso.  
+É critério.
+
+Nós não seguimos tendências.  
+Nós removemos o que não importa.
+
+Quando compartilhar faz sentido, compartilhamos.  
+Quando não faz, resolvemos.
+
+Às vezes isso vira open source.  
+Às vezes vira software sob medida.
+
+Sempre vira algo simples.  
+Sempre vira algo inevitável.
 
 ### O que fazemos
 
@@ -150,25 +178,85 @@ Título: **Menos caos. Mais entrega.**
 Linha opcional:
 **Trabalhamos rápido. Com padrão alto. E sem desculpas.**
 
-### Open Source
+### Produtos
 
-Título: **Open source, do jeito certo.**
-Construímos em público. Compartilhamos o que acreditamos.  
-Ferramentas, templates e padrões para tornar o trabalho mais simples.
+Título: **Produtos em construção.**
+Subtítulo: **Ferramentas que estamos desenvolvendo para simplificar tecnologia, reduzir desperdício e aumentar clareza.**
 
-CTAs (placeholder):
+#### Badges de status
 
-- **GitHub da Thinkng**
-- **Ver projetos**
+Use badges para indicar o estágio de desenvolvimento:
+- `badge-alpha` → Produto em testes iniciais
+- `badge-beta` → Produto em testes com usuários
+- `badge-dev` → Em desenvolvimento ativo
+- `badge-roadmap` → Planejado para o futuro
 
-Linha curta opcional:
-**Comunidade é produto.**
+#### Produtos (Grid 3 colunas no desktop)
+
+**Coins** (Alpha)
+- Descrição: FinOps simplificado que unifica gastos SaaS e cloud, revelando desperdício e mostrando economia clara e acionável.
+- Tags: finance, saas, finops
+- Ícone: `coins`
+- Cor: `--warn`
+
+**Minder** (Em desenvolvimento)
+- Descrição: Analisa bugs, PRs, deploys e inputs manuais para revelar a performance real do seu time — insights baseados em dados, não em suposições.
+- Tags: analytics, performance, insights
+- Ícone: `brain`
+- Cor: `--purple`
+
+**Nexus** (Em desenvolvimento)
+- Descrição: Sua infraestrutura, simplificada. Hub visual e low-code para criar pipelines, ambientes e automações — sem overhead.
+- Tags: infrastructure, devops, automation
+- Ícone: `network`
+- Cor: `--accent`
+
+**Ask** (Roadmap)
+- Descrição: Suporte que parece humano. Abra e resolva solicitações através de conversação natural — sem formulários, sem fricção.
+- Tags: support, helpdesk, ai
+- Ícone: `message-circle-question`
+- Cor: `--success`
+
+**Lens** (Roadmap)
+- Descrição: Veja o verdadeiro valor da sua tecnologia. Conecte performance, custo e cultura para entender onde sua tech realmente entrega impacto.
+- Tags: analytics, metrics, insights
+- Ícone: `scan`
+- Cor: `--accent`
+
+**Echo** (Roadmap)
+- Descrição: Meça foco, não ruído. Entenda como comunicação e troca de contexto impactam a performance do seu time.
+- Tags: productivity, collaboration, metrics
+- Ícone: `activity`
+- Cor: `--purple`
+
+**Pulse** (Roadmap)
+- Descrição: Conheça o estado real dos seus sistemas — calmo, tenso ou crítico. Uma nova forma de monitorar infraestrutura: focada, visual, humana.
+- Tags: monitoring, observability, infrastructure
+- Ícone: `heart-pulse`
+- Cor: `--warn`
+
+**Flow** (Roadmap)
+- Descrição: Do commit à produção — veja onde seu fluxo quebra. Visualize todo o pipeline de entrega e corrija gargalos antes que eles afetem a velocidade.
+- Tags: devops, ci/cd, delivery
+- Ícone: `git-branch`
+- Cor: `--success`
+
+**Compass** (Roadmap)
+- Descrição: O centro de comando da sua organização tech. Veja seu time, sistemas e custos em uma visão clara — sem ruído, apenas verdade.
+- Tags: management, overview, platform
+- Ícone: `compass`
+- Cor: `--accent`
+
+**Hub** (Roadmap)
+- Descrição: Seu centro de comando. Acesse todos os produtos e serviços contratados com a thnkng.in em uma única plataforma — organizada, integrada e sempre atualizada.
+- Tags: platform, integration
+- Ícone: `grid-3x3`
+- Cor: `--accent`
 
 ### Software sob medida
 
-Título: **Sob medida, sem virar “software house”.**
-Fazemos open source quando possível.  
-Quando não dá, construímos sob medida — com o mesmo padrão.
+Título: **Software sob medida.**
+Subtítulo: **Construímos soluções personalizadas com o mesmo padrão de excelência que aplicamos em tudo que fazemos.**
 
 Regras:
 
@@ -177,26 +265,19 @@ Regras:
 - Se a solução puder virar referência reutilizável, melhor.
 
 Frase final:
-**Open source quando possível. Software sob medida quando necessário.**
+**Clareza, velocidade e impacto real.**
 
 ### Contato
 
 Título: **Vamos construir algo inevitável.**
-Se você quer simplicidade, qualidade e velocidade com consistência, fale com a gente.
+Subtítulo: **Se você quer simplicidade, qualidade e velocidade com consistência, fale com a gente.**
 
-Form (sem backend):
-
-- Nome
-- Email
-- Mensagem
-  Botão: **Enviar**
-
-Alternativa:
-Email: **contato@thnkng.in** (placeholder)
+Email de contato:
+**hello@thnkng.in**
 
 ### Footer
 
-- **Thinkng. Design, código e propósito.**
+- **thnkng.in. Design, código e propósito.**
 - **© 2026 Thinkng. Todos os direitos reservados.**
 
 ## 6) Entregável (o que você deve gerar)

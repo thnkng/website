@@ -25,14 +25,15 @@
             --fg: #111111;
             --muted: #B6B6B6;
             --surface: #EDEDED;
-            --accent: #007AFF;
+            --accent: #FF006E;
             --warn: #FF7A00;
-            --accent-light: #E5F2FF;
+            --accent-light: #FFE5F1;
             --warn-light: #FFF3E5;
             --success: #34C759;
             --success-light: #E8F8EC;
             --purple: #AF52DE;
             --purple-light: #F3E5FF;
+            --magenta: #FF006E;
         }
         
         * {
@@ -67,20 +68,22 @@
         }
         
         h1 {
-            font-size: 56px;
+            font-size: 48px;
             font-weight: 300;
             line-height: 1.2;
+            letter-spacing: -0.01em;
         }
         
         h2 {
-            font-size: 40px;
-            font-weight: 400;
-            line-height: 1.3;
+            font-size: 42px;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
         }
         
         h3 {
-            font-size: 28px;
-            font-weight: 500;
+            font-size: 22px;
+            font-weight: 600;
             line-height: 1.4;
         }
         
@@ -94,49 +97,66 @@
         header {
             position: sticky;
             top: 0;
-            background-color: var(--bg);
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid transparent;
-            transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+            transition: all 250ms ease-out;
             z-index: 50;
         }
         
         header.scrolled {
-            border-bottom-color: var(--surface);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            background-color: rgba(255, 255, 255, 0.98);
+            border-bottom-color: rgba(0, 122, 255, 0.1);
+            box-shadow: 0 2px 12px rgba(0, 122, 255, 0.04);
         }
         
         .logo {
-            font-size: 24px;
-            font-weight: 500;
+            font-size: 32px;
+            font-weight: 300;
             color: var(--fg);
             text-decoration: none;
+            letter-spacing: -0.02em;
+            transition: all 250ms ease-out;
+        }
+        
+        .logo:hover {
+            color: var(--accent);
         }
         
         nav a {
             color: var(--fg);
             text-decoration: none;
-            font-size: 16px;
-            transition: color 200ms ease-out;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 250ms ease-out;
             padding: 8px 0;
             position: relative;
         }
         
-        nav a:hover {
-            color: var(--accent);
-        }
-        
-        nav a.active {
-            color: var(--accent);
-        }
-        
-        nav a.active::after {
+        nav a::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             height: 2px;
-            background-color: var(--accent);
+            background: linear-gradient(90deg, var(--accent), var(--purple));
+            transform: scaleX(0);
+            transition: transform 250ms ease-out;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        nav a:hover::after,
+        nav a.active::after {
+            transform: scaleX(1);
+        }
+        
+        nav a.active {
+            color: var(--accent);
         }
         
         /* Buttons */
@@ -145,13 +165,13 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            min-height: 44px;
-            padding: 0 24px;
-            border-radius: 24px;
-            font-size: 16px;
-            font-weight: 500;
+            min-height: 48px;
+            padding: 0 28px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
             text-decoration: none;
-            transition: all 200ms ease-out;
+            transition: all 250ms ease-out;
             cursor: pointer;
             border: none;
         }
@@ -159,33 +179,37 @@
         .btn-primary {
             background-color: var(--fg);
             color: var(--bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
         .btn-primary:hover {
-            background-color: #333;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
             transform: translateY(-2px);
         }
         
         .btn-secondary {
-            background-color: transparent;
+            background-color: var(--bg);
             color: var(--fg);
-            border: 1px solid var(--fg);
+            border: 2px solid var(--fg);
         }
         
         .btn-secondary:hover {
             background-color: var(--fg);
             color: var(--bg);
+            border-color: var(--fg);
             transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
         }
         
         .btn-accent {
             background-color: var(--accent);
             color: white;
             border: none;
+            box-shadow: 0 2px 12px rgba(255, 0, 110, 0.25);
         }
         
         .btn-accent:hover {
-            background-color: #0066DD;
+            box-shadow: 0 6px 24px rgba(255, 0, 110, 0.4);
             transform: translateY(-2px);
         }
         
@@ -193,10 +217,11 @@
             background-color: var(--purple);
             color: white;
             border: none;
+            box-shadow: 0 2px 12px rgba(175, 82, 222, 0.25);
         }
         
         .btn-purple:hover {
-            background-color: #9742C5;
+            box-shadow: 0 6px 24px rgba(175, 82, 222, 0.4);
             transform: translateY(-2px);
         }
         
@@ -208,11 +233,12 @@
         
         /* Cards */
         .card {
-            background-color: var(--surface);
-            border-radius: 24px;
-            padding: 32px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+            background-color: var(--bg);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 36px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            transition: all 250ms ease-out;
             position: relative;
             overflow: hidden;
         }
@@ -224,38 +250,50 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
         }
         
-        .card-design .card-icon {
-            background-color: var(--accent);
+        .card-design {
+            border-color: var(--accent);
         }
         
-        .card-code .card-icon {
-            background-color: var(--purple);
+        .card-design .card-icon i {
+            color: var(--accent) !important;
         }
         
-        .card-purpose .card-icon {
-            background-color: var(--success);
+        .card-code {
+            border-color: var(--purple);
+        }
+        
+        .card-code .card-icon i {
+            color: var(--purple) !important;
+        }
+        
+        .card-purpose {
+            border-color: var(--success);
+        }
+        
+        .card-purpose .card-icon i {
+            color: var(--success) !important;
         }
         
         .card-icon i {
-            color: white !important;
+            stroke-width: 1.5;
         }
         
         .product-card {
             background-color: var(--bg);
-            border: 1px solid var(--surface);
-            border-radius: 20px;
-            padding: 24px;
-            transition: all 200ms ease-out;
+            border: 2px solid rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 250ms ease-out;
             position: relative;
         }
         
         .product-card:hover {
             border-color: var(--accent);
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 122, 255, 0.1);
+            box-shadow: 0 12px 32px rgba(0, 122, 255, 0.15);
         }
         
         .product-badge {
@@ -292,13 +330,13 @@
         }
         
         .product-icon {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
         
         .tag {
@@ -404,7 +442,19 @@
         
         .card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-design:hover {
+            box-shadow: 0 12px 32px rgba(0, 122, 255, 0.2);
+        }
+        
+        .card-code:hover {
+            box-shadow: 0 12px 32px rgba(175, 82, 222, 0.2);
+        }
+        
+        .card-purpose:hover {
+            box-shadow: 0 12px 32px rgba(52, 199, 89, 0.2);
         }
         
         /* Focus states */
@@ -437,7 +487,7 @@
         /* Responsive typography */
         @media (max-width: 768px) {
             h1 {
-                font-size: 40px;
+                font-size: 36px;
             }
             
             h2 {
@@ -467,7 +517,7 @@
         }
         
         .section-spacing {
-            padding: 128px 0;
+            padding: 120px 0;
         }
         
         @media (max-width: 768px) {
@@ -482,7 +532,7 @@
     <header id="top">
         <div class="container">
             <div class="flex flex-col lg:flex-row items-center justify-between py-4 gap-4">
-                <a href="#top" class="logo">thnkng<span style="color:var(--success)">.</span>in</a>
+                <a href="#top" class="logo">thnkng<span style="color:var(--magenta)">.</span>in</a>
                 
                 <nav class="flex flex-wrap items-center justify-center gap-4 lg:gap-8">
                     <a href="#manifesto" data-nav-link>Manifesto</a>
@@ -494,7 +544,7 @@
                 
                 <a href="#contato" class="btn btn-primary btn-small hidden lg:inline-flex">
                     <i data-lucide="message-circle" class="w-4 h-4"></i>
-                    Falar com a thnkng.in
+                    Falar conosco
                 </a>
             </div>
         </div>
@@ -502,35 +552,34 @@
     
     <main>
         <!-- Hero Section -->
-        <section class="section-spacing">
+        <section class="section-spacing" style="background: linear-gradient(180deg, rgba(229, 242, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);">
             <div class="container">
                 <div class="max-w-4xl">
-                    <h1 class="mb-6">Tornamos a tecnologia invisível.</h1>
-                    <p class="text-2xl mb-8" style="color: var(--muted);">Design, código e propósito. Do briefing ao deploy. Sem ruído.</p>
-                    <div class="flex flex-wrap gap-4 mb-4">
+                    <h1 class="mb-6">A melhor tecnologia é invisível.</h1>
+                    <p class="text-2xl mb-10" style="color: var(--fg); opacity: 0.7; line-height: 1.5;">Para empresas de tech e times de tech.<br>Design. Código. Propósito. Simples assim.</p>
+                    <div class="flex flex-wrap gap-4 mb-6">
                         <a href="#contato" class="btn btn-accent">
                             <i data-lucide="send" class="w-5 h-5"></i>
-                            Falar com a thnkng.in
+                            Falar conosco
                         </a>
                         <a href="#produtos" class="btn btn-secondary">
                             <i data-lucide="sparkles" class="w-5 h-5"></i>
-                            Nossos Produtos
+                            Ver produtos
                         </a>
                     </div>
-                    <p class="caption mt-8">Menos ferramenta. Mais significado.</p>
                 </div>
             </div>
         </section>
         
         <!-- Manifesto -->
-        <section id="manifesto" class="section-spacing" style="background-color: var(--fg); color: var(--bg);">
+        <section id="manifesto" class="section-spacing" style="background: linear-gradient(135deg, var(--fg) 0%, #2a2a2a 100%); color: var(--bg);">
             <div class="container">
                 <div class="max-w-4xl mx-auto">
                     <h2 class="text-center mb-16" style="color: var(--bg);">Manifesto thnkng.in</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                         <div class="space-y-3">
-                            <p class="text-lg">Não estamos aqui para construir mais tecnologia.</p>
-                            <p class="text-lg font-medium">Estamos aqui para reduzir atrito.</p>
+                            <p class="text-lg" style="opacity: 0.8;">Não estamos aqui para construir mais tecnologia.</p>
+                            <p class="text-lg font-semibold">Estamos aqui para reduzir atrito.</p>
                         </div>
                         
                         <div class="space-y-3">
@@ -592,7 +641,7 @@
         <!-- O que fazemos -->
         <section id="o-que-fazemos" class="section-spacing">
             <div class="container">
-                <h2 class="text-center mb-16">Três pilares. Um padrão.</h2>
+                <h2 class="text-center mb-16">Três coisas. Feitas direito.</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="card card-design">
                         <div class="card-icon">
@@ -600,9 +649,9 @@
                         </div>
                         <h3 class="mb-4">Design</h3>
                         <ul class="space-y-2">
-                            <li>Interfaces silenciosas.</li>
-                            <li>Produto que se entende sem manual.</li>
-                            <li>Decisões visuais que viram confiança.</li>
+                            <li>Interfaces que você não percebe.</li>
+                            <li>Produtos que se explicam.</li>
+                            <li>Cada pixel importa.</li>
                         </ul>
                     </div>
                     <div class="card card-code">
@@ -611,9 +660,9 @@
                         </div>
                         <h3 class="mb-4">Código</h3>
                         <ul class="space-y-2">
-                            <li>Engenharia limpa, legível, escalável.</li>
-                            <li>DX que acelera times.</li>
-                            <li>Performance como requisito, não como ajuste.</li>
+                            <li>Simples. Rápido. Escalável.</li>
+                            <li>Times mais produtivos.</li>
+                            <li>Performance não é opcional.</li>
                         </ul>
                     </div>
                     <div class="card card-purpose">
@@ -622,9 +671,9 @@
                         </div>
                         <h3 class="mb-4">Propósito</h3>
                         <ul class="space-y-2">
-                            <li>Estratégia antes de features.</li>
-                            <li>Clareza do que importa.</li>
-                            <li>Produto alinhado com impacto real.</li>
+                            <li>Menos features. Mais foco.</li>
+                            <li>Apenas o que importa.</li>
+                            <li>Impacto real.</li>
                         </ul>
                     </div>
                 </div>
@@ -632,33 +681,33 @@
         </section>
         
         <!-- Como ajudamos -->
-        <section id="como-ajudamos" class="section-spacing" style="background-color: var(--surface);">
+        <section id="como-ajudamos" class="section-spacing" style="background: linear-gradient(180deg, rgba(229, 242, 255, 0.2) 0%, rgba(243, 229, 255, 0.2) 100%);">
             <div class="container">
                 <div class="max-w-3xl mx-auto">
-                    <h2 class="mb-12">Menos caos. Mais entrega.</h2>
+                    <h2 class="mb-12">O que fazemos por você.</h2>
                     <ul class="space-y-4 text-lg mb-8">
                         <li class="flex items-start gap-3">
                             <i data-lucide="target" class="w-6 h-6 mt-1" style="color: var(--accent); flex-shrink: 0;"></i>
-                            <span>Alinhamos visão, escopo e narrativa do produto.</span>
+                            <span>Transformamos ideias confusas em produtos claros.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="git-merge" class="w-6 h-6 mt-1" style="color: var(--purple); flex-shrink: 0;"></i>
-                            <span>Transformamos fluxos confusos em experiências claras.</span>
+                            <span>Eliminamos complexidade desnecessária.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="layers" class="w-6 h-6 mt-1" style="color: var(--success); flex-shrink: 0;"></i>
-                            <span>Padronizamos UI/UX e design system para escalar.</span>
+                            <span>Criamos sistemas que escalam.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="package" class="w-6 h-6 mt-1" style="color: var(--warn); flex-shrink: 0;"></i>
-                            <span>Refatoramos arquitetura sem quebrar o ritmo do time.</span>
+                            <span>Evoluímos sua tecnologia sem parar o time.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="trending-up" class="w-6 h-6 mt-1" style="color: var(--accent); flex-shrink: 0;"></i>
-                            <span>Entregamos um caminho simples para evoluir.</span>
+                            <span>Aceleramos entregas. Sem atalhos.</span>
                         </li>
                     </ul>
-                    <p class="text-xl font-medium">Trabalhamos rápido. Com padrão alto. E sem desculpas.</p>
+                    <p class="text-xl font-medium">Rápido. Simples. Impecável.</p>
                 </div>
             </div>
         </section>
@@ -667,16 +716,16 @@
         <section id="produtos" class="section-spacing">
             <div class="container">
                 <div class="max-w-4xl mx-auto mb-12 text-center">
-                    <h2 class="mb-6">Produtos em construção.</h2>
-                    <p class="text-xl" style="color: var(--muted);">Ferramentas que estamos desenvolvendo para simplificar tecnologia, reduzir desperdício e aumentar clareza.</p>
+                    <h2 class="mb-6">Produtos que estamos construindo.</h2>
+                    <p class="text-xl" style="color: var(--muted);">Ferramentas diretas para times de tech que querem clareza, controle e velocidade.</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Coins -->
                     <div class="product-card">
                         <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--warn);">
-                                <i data-lucide="coins" class="w-5 h-5" style="color: white;"></i>
+                            <div class="product-icon">
+                                <i data-lucide="circle-dollar-sign" class="w-8 h-8" style="color: var(--warn); stroke-width: 1.5;"></i>
                             </div>
                             <span class="product-badge badge-alpha">
                                 <i data-lucide="flask-conical" class="w-3 h-3"></i>
@@ -684,7 +733,7 @@
                             </span>
                         </div>
                         <h3 class="text-xl mb-2">Coins</h3>
-                        <p class="text-sm mb-3">FinOps simplificado que unifica gastos SaaS e cloud, revelando desperdício e mostrando economia clara e acionável.</p>
+                        <p class="text-sm mb-3">Controle de gastos. SaaS e cloud em um só lugar. Veja desperdício. Economize.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag tag-finance">finance</span>
                             <span class="tag tag-saas">saas</span>
@@ -695,13 +744,13 @@
                     <!-- Minder -->
                     <div class="product-card">
                         <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--purple);">
-                                <i data-lucide="brain" class="w-5 h-5" style="color: white;"></i>
+                            <div class="product-icon">
+                                <i data-lucide="brain" class="w-8 h-8" style="color: var(--purple); stroke-width: 1.5;"></i>
                             </div>
                             <span class="product-badge badge-dev">Em desenvolvimento</span>
                         </div>
                         <h3 class="text-xl mb-2">Minder</h3>
-                        <p class="text-sm mb-3">Analisa bugs, PRs, deploys e inputs manuais para revelar a performance real do seu time — insights baseados em dados, não em suposições.</p>
+                        <p class="text-sm mb-3">Acompanhe o time de tech. Bugs, PRs, deploys. Dados reais de produtividade.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag tag-analytics">analytics</span>
                             <span class="tag tag-performance">performance</span>
@@ -712,13 +761,13 @@
                     <!-- Nexus -->
                     <div class="product-card">
                         <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--accent);">
-                                <i data-lucide="network" class="w-5 h-5" style="color: white;"></i>
+                            <div class="product-icon">
+                                <i data-lucide="network" class="w-8 h-8" style="color: #FFD60A; stroke-width: 1.5;"></i>
                             </div>
                             <span class="product-badge badge-dev">Em desenvolvimento</span>
                         </div>
                         <h3 class="text-xl mb-2">Nexus</h3>
-                        <p class="text-sm mb-3">Sua infraestrutura, simplificada. Hub visual e low-code para criar pipelines, ambientes e automações — sem overhead.</p>
+                        <p class="text-sm mb-3">Monte infraestrutura visual. Crie pipelines e ambientes sem código.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag tag-infrastructure">infrastructure</span>
                             <span class="tag tag-devops">devops</span>
@@ -729,13 +778,13 @@
                     <!-- Ask -->
                     <div class="product-card">
                         <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--success);">
-                                <i data-lucide="message-circle-question" class="w-5 h-5" style="color: white;"></i>
+                            <div class="product-icon">
+                                <i data-lucide="message-circle-question" class="w-8 h-8" style="color: var(--success); stroke-width: 1.5;"></i>
                             </div>
                             <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Ask</h3>
-                        <p class="text-sm mb-3">Suporte que parece humano. Abra e resolva solicitações através de conversação natural — sem formulários, sem fricção.</p>
+                        <p class="text-sm mb-3">Atendimento por conversa. Abra e resolva tickets naturalmente. Sem formulários.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag tag-support">support</span>
                             <span class="tag tag-helpdesk">helpdesk</span>
@@ -746,13 +795,13 @@
                     <!-- Lens -->
                     <div class="product-card">
                         <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--accent);">
-                                <i data-lucide="scan" class="w-5 h-5" style="color: white;"></i>
+                            <div class="product-icon">
+                                <i data-lucide="scan" class="w-8 h-8" style="color: #007AFF; stroke-width: 1.5;"></i>
                             </div>
                             <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Lens</h3>
-                        <p class="text-sm mb-3">Veja o verdadeiro valor da sua tecnologia. Conecte performance, custo e cultura para entender onde sua tech realmente entrega impacto.</p>
+                        <p class="text-sm mb-3">Quanto sua tech vale? Conecte custo, performance e impacto. Veja o ROI real.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag tag-analytics">analytics</span>
                             <span class="tag tag-metrics">metrics</span>
@@ -763,30 +812,30 @@
                     <!-- Echo -->
                     <div class="product-card">
                         <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--purple);">
-                                <i data-lucide="activity" class="w-5 h-5" style="color: white;"></i>
+                            <div class="product-icon">
+                                <i data-lucide="activity" class="w-8 h-8" style="color: #9742C5; stroke-width: 1.5;"></i>
                             </div>
                             <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Echo</h3>
-                        <p class="text-sm mb-3">Meça foco, não ruído. Entenda como comunicação e troca de contexto impactam a performance do seu time.</p>
+                        <p class="text-sm mb-3">Comunicação completa. Interna e externa. Disparo de e-mail, mensagens, tudo.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-productivity">productivity</span>
-                            <span class="tag tag-collaboration">collaboration</span>
-                            <span class="tag tag-metrics">metrics</span>
+                            <span class="tag tag-communication">communication</span>
+                            <span class="tag tag-email">email</span>
+                            <span class="tag tag-messaging">messaging</span>
                         </div>
                     </div>
                     
                     <!-- Pulse -->
                     <div class="product-card">
                         <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--warn);">
-                                <i data-lucide="heart-pulse" class="w-5 h-5" style="color: white;"></i>
+                            <div class="product-icon">
+                                <i data-lucide="heart-pulse" class="w-8 h-8" style="color: #FF3B30; stroke-width: 1.5;"></i>
                             </div>
                             <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Pulse</h3>
-                        <p class="text-sm mb-3">Conheça o estado real dos seus sistemas — calmo, tenso ou crítico. Uma nova forma de monitorar infraestrutura: focada, visual, humana.</p>
+                        <p class="text-sm mb-3">Monitoramento humano. Veja se seus sistemas estão calmos, tensos ou críticos.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag tag-monitoring">monitoring</span>
                             <span class="tag tag-observability">observability</span>
@@ -797,13 +846,13 @@
                     <!-- Flow -->
                     <div class="product-card">
                         <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--success);">
-                                <i data-lucide="git-branch" class="w-5 h-5" style="color: white;"></i>
+                            <div class="product-icon">
+                                <i data-lucide="git-branch" class="w-8 h-8" style="color: #30D158; stroke-width: 1.5;"></i>
                             </div>
                             <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Flow</h3>
-                        <p class="text-sm mb-3">Do commit à produção — veja onde seu fluxo quebra. Visualize todo o pipeline de entrega e corrija gargalos antes que eles afetem a velocidade.</p>
+                        <p class="text-sm mb-3">Acompanhe código até produção. Veja gargalos no pipeline. Entregue mais rápido.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag tag-devops">devops</span>
                             <span class="tag tag-cicd">ci/cd</span>
@@ -814,13 +863,13 @@
                     <!-- Compass -->
                     <div class="product-card">
                         <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--accent);">
-                                <i data-lucide="compass" class="w-5 h-5" style="color: white;"></i>
+                            <div class="product-icon">
+                                <i data-lucide="compass" class="w-8 h-8" style="color: #32ADE6; stroke-width: 1.5;"></i>
                             </div>
                             <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Compass</h3>
-                        <p class="text-sm mb-3">O centro de comando da sua organização tech. Veja seu time, sistemas e custos em uma visão clara — sem ruído, apenas verdade.</p>
+                        <p class="text-sm mb-3">Painel executivo de tech. Status geral, times, custos. Tudo em uma tela.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag tag-management">management</span>
                             <span class="tag tag-overview">overview</span>
@@ -828,16 +877,48 @@
                         </div>
                     </div>
                     
+                    <!-- Thread -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon">
+                                <i data-lucide="inbox" class="w-8 h-8" style="color: #FF453A; stroke-width: 1.5;"></i>
+                            </div>
+                            <span class="product-badge badge-roadmap">Roadmap</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Thread</h3>
+                        <p class="text-sm mb-3">Uma caixa de entrada para tudo. Email, tickets, notificações. Conectado.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag tag-productivity">productivity</span>
+                            <span class="tag tag-support">support</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Forge -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon">
+                                <i data-lucide="hammer" class="w-8 h-8" style="color: #64D2FF; stroke-width: 1.5;"></i>
+                            </div>
+                            <span class="product-badge badge-roadmap">Roadmap</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Forge</h3>
+                        <p class="text-sm mb-3">Gerencie produto e tech. Demandas, tarefas, documentação. Tudo integrado.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag tag-management">management</span>
+                            <span class="tag tag-collaboration">collaboration</span>
+                        </div>
+                    </div>
+                    
                     <!-- Hub -->
                     <div class="product-card">
                         <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--accent);">
-                                <i data-lucide="grid-3x3" class="w-5 h-5" style="color: white;"></i>
+                            <div class="product-icon">
+                                <i data-lucide="grid-3x3" class="w-8 h-8" style="color: #5E5CE6; stroke-width: 1.5;"></i>
                             </div>
                             <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Hub</h3>
-                        <p class="text-sm mb-3">Seu centro de comando. Acesse todos os produtos e serviços contratados com a thnkng.in em uma única plataforma — organizada, integrada e sempre atualizada.</p>
+                        <p class="text-sm mb-3">Acesse todos os produtos thnkng.in. Uma plataforma, tudo conectado.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag tag-platform">platform</span>
                             <span class="tag tag-integration">integration</span>
@@ -847,47 +928,45 @@
             </div>
         </section>
         
-        <!-- Software sob medida -->
-        <section id="sob-medida" class="section-spacing">
+        <!-- Antecipe o roadmap -->
+        <section class="section-spacing" style="background-color: var(--fg); color: var(--bg);">
             <div class="container">
-                <div class="max-w-3xl mx-auto">
-                    <h2 class="mb-6">Software sob medida.</h2>
-                    <p class="text-xl mb-8">Construímos soluções personalizadas com o mesmo padrão de excelência que aplicamos em tudo que fazemos.</p>
-                    <div class="space-y-4 mb-8">
-                        <p class="text-lg">Regras:</p>
-                        <ul class="space-y-3 text-lg">
-                            <li>Não vendemos horas. Assumimos problemas.</li>
-                            <li>Projetos curados: poucos, estratégicos, com impacto.</li>
-                            <li>Se a solução puder virar referência reutilizável, melhor.</li>
-                        </ul>
-                    </div>
-                    <p class="text-xl font-medium">Clareza, velocidade e impacto real.</p>
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="mb-6" style="color: var(--bg);">Antecipe o futuro.</h2>
+                    <p class="text-xl mb-12" style="opacity: 0.8;">Quer um produto mais rápido? Ajude a construir. Acelere o roadmap.</p>
+                    
+                    <a href="mailto:hello@thnkng.in?subject=Antecipar%20Roadmap" class="btn btn-accent inline-flex">
+                        <i data-lucide="rocket" class="w-5 h-5"></i>
+                        Antecipar roadmap
+                    </a>
                 </div>
             </div>
         </section>
         
         <!-- Contato -->
-        <section id="contato" class="section-spacing" style="background-color: var(--surface);">
+        <section id="contato" class="section-spacing" style="background: linear-gradient(180deg, rgba(229, 242, 255, 0.2) 0%, rgba(243, 229, 255, 0.2) 100%);">
             <div class="container">
                 <div class="max-w-2xl mx-auto text-center">
-                    <h2 class="mb-6">Vamos construir algo inevitável.</h2>
-                    <p class="text-xl mb-12">Se você quer simplicidade, qualidade e velocidade com consistência, fale com a gente.</p>
+                    <h2 class="mb-6">Vamos construir algo incrível.</h2>
+                    <p class="text-xl mb-12">Para CTOs, VPs de Engenharia e times de tech.<br>Simples. Rápido. Impecável.</p>
                     
                     <a href="mailto:hello@thnkng.in" class="btn btn-accent inline-flex">
                         <i data-lucide="mail" class="w-5 h-5"></i>
                         hello@thnkng.in
                     </a>
+                    
+                    <p class="caption mt-12" style="opacity: 0.6;">Às vezes construímos sob medida. Quando faz sentido.</p>
                 </div>
             </div>
         </section>
     </main>
     
     <!-- Footer -->
-    <footer class="py-16" style="background-color: var(--surface);">
+    <footer class="py-16" style="background-color: var(--fg); color: var(--bg);">
         <div class="container">
             <div class="text-center space-y-2">
-                <p class="font-medium">thnkng.in. Design, código e propósito.</p>
-                <p class="caption">© 2026 thnkng.in. Todos os direitos reservados.</p>
+                <p class="font-medium">thnkng.in</p>
+                <p class="caption" style="opacity: 0.6;">© 2026 thnkng.in</p>
             </div>
         </div>
     </footer>
