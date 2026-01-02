@@ -272,10 +272,20 @@
             color: var(--accent);
         }
         
+        .badge-alpha {
+            background-color: var(--warn-light);
+            color: var(--warn);
+        }
+        
         .badge-dev {
             background-color: var(--muted);
             color: var(--fg);
             opacity: 0.7;
+        }
+        
+        .badge-roadmap {
+            background-color: var(--surface);
+            color: var(--muted);
         }
         
         .product-icon {
@@ -306,6 +316,86 @@
         }
         
         .tag-finops {
+            background-color: var(--warn);
+        }
+        
+        .tag-platform {
+            background-color: var(--accent);
+        }
+        
+        .tag-integration {
+            background-color: var(--purple);
+        }
+        
+        .tag-infrastructure {
+            background-color: var(--success);
+        }
+        
+        .tag-devops {
+            background-color: var(--accent);
+        }
+        
+        .tag-automation {
+            background-color: var(--warn);
+        }
+        
+        .tag-support {
+            background-color: var(--success);
+        }
+        
+        .tag-helpdesk {
+            background-color: var(--purple);
+        }
+        
+        .tag-ai {
+            background-color: var(--warn);
+        }
+        
+        .tag-analytics {
+            background-color: var(--accent);
+        }
+        
+        .tag-metrics {
+            background-color: var(--purple);
+        }
+        
+        .tag-insights {
+            background-color: var(--warn);
+        }
+        
+        .tag-productivity {
+            background-color: var(--success);
+        }
+        
+        .tag-collaboration {
+            background-color: var(--purple);
+        }
+        
+        .tag-monitoring {
+            background-color: var(--warn);
+        }
+        
+        .tag-observability {
+            background-color: var(--accent);
+        }
+        
+        .tag-cicd {
+            background-color: var(--purple);
+        }
+        
+        .tag-delivery {
+            background-color: var(--success);
+        }
+        
+        .tag-management {
+            background-color: var(--accent);
+        }
+        
+        .tag-overview {
+            background-color: var(--purple);
+        }
+        
+        .tag-performance {
             background-color: var(--warn);
         }
         
@@ -585,9 +675,9 @@
                             <div class="product-icon" style="background-color: var(--warn);">
                                 <i data-lucide="coins" class="w-5 h-5" style="color: white;"></i>
                             </div>
-                            <span class="product-badge badge-beta">
+                            <span class="product-badge badge-alpha">
                                 <i data-lucide="flask-conical" class="w-3 h-3"></i>
-                                Beta
+                                Alpha
                             </span>
                         </div>
                         <h3 class="text-xl mb-2">Coins</h3>
@@ -597,102 +687,6 @@
                             <span class="tag tag-saas">saas</span>
                             <span class="tag tag-finops">finops</span>
                         </div>
-                    </div>
-                    
-                    <!-- Hub -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--accent);">
-                                <i data-lucide="grid-3x3" class="w-5 h-5" style="color: white;"></i>
-                            </div>
-                            <span class="product-badge badge-dev">Em desenvolvimento</span>
-                        </div>
-                        <h3 class="text-xl mb-2">Hub</h3>
-                        <p class="text-sm mb-3">Todas as soluções em um só lugar. Integra e unifica as informações conforme você usa, criando uma visão completa e conectada.</p>
-                    </div>
-                    
-                    <!-- Nexus -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--accent);">
-                                <i data-lucide="network" class="w-5 h-5" style="color: white;"></i>
-                            </div>
-                            <span class="product-badge badge-dev">Em desenvolvimento</span>
-                        </div>
-                        <h3 class="text-xl mb-2">Nexus</h3>
-                        <p class="text-sm mb-3">Sua infraestrutura, simplificada. Hub visual e low-code para criar pipelines, ambientes e automações — sem overhead.</p>
-                    </div>
-                    
-                    <!-- Ask -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--success);">
-                                <i data-lucide="message-circle-question" class="w-5 h-5" style="color: white;"></i>
-                            </div>
-                            <span class="product-badge badge-dev">Em desenvolvimento</span>
-                        </div>
-                        <h3 class="text-xl mb-2">Ask</h3>
-                        <p class="text-sm mb-3">Suporte que parece humano. Abra e resolva solicitações através de conversação natural — sem formulários, sem fricção.</p>
-                    </div>
-                    
-                    <!-- Lens -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--accent);">
-                                <i data-lucide="scan" class="w-5 h-5" style="color: white;"></i>
-                            </div>
-                            <span class="product-badge badge-dev">Em desenvolvimento</span>
-                        </div>
-                        <h3 class="text-xl mb-2">Lens</h3>
-                        <p class="text-sm mb-3">Veja o verdadeiro valor da sua tecnologia. Conecte performance, custo e cultura para entender onde sua tech realmente entrega impacto.</p>
-                    </div>
-                    
-                    <!-- Echo -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--purple);">
-                                <i data-lucide="activity" class="w-5 h-5" style="color: white;"></i>
-                            </div>
-                            <span class="product-badge badge-dev">Em desenvolvimento</span>
-                        </div>
-                        <h3 class="text-xl mb-2">Echo</h3>
-                        <p class="text-sm mb-3">Meça foco, não ruído. Entenda como comunicação e troca de contexto impactam a performance do seu time.</p>
-                    </div>
-                    
-                    <!-- Pulse -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--warn);">
-                                <i data-lucide="heart-pulse" class="w-5 h-5" style="color: white;"></i>
-                            </div>
-                            <span class="product-badge badge-dev">Em desenvolvimento</span>
-                        </div>
-                        <h3 class="text-xl mb-2">Pulse</h3>
-                        <p class="text-sm mb-3">Conheça o estado real dos seus sistemas — calmo, tenso ou crítico. Uma nova forma de monitorar infraestrutura: focada, visual, humana.</p>
-                    </div>
-                    
-                    <!-- Flow -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--success);">
-                                <i data-lucide="git-branch" class="w-5 h-5" style="color: white;"></i>
-                            </div>
-                            <span class="product-badge badge-dev">Em desenvolvimento</span>
-                        </div>
-                        <h3 class="text-xl mb-2">Flow</h3>
-                        <p class="text-sm mb-3">Do commit à produção — veja onde seu fluxo quebra. Visualize todo o pipeline de entrega e corrija gargalos antes que eles afetem a velocidade.</p>
-                    </div>
-                    
-                    <!-- Compass -->
-                    <div class="product-card">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="product-icon" style="background-color: var(--accent);">
-                                <i data-lucide="compass" class="w-5 h-5" style="color: white;"></i>
-                            </div>
-                            <span class="product-badge badge-dev">Em desenvolvimento</span>
-                        </div>
-                        <h3 class="text-xl mb-2">Compass</h3>
-                        <p class="text-sm mb-3">O centro de comando da sua organização tech. Veja seu time, sistemas e custos em uma visão clara — sem ruído, apenas verdade.</p>
                     </div>
                     
                     <!-- Minder -->
@@ -705,6 +699,146 @@
                         </div>
                         <h3 class="text-xl mb-2">Minder</h3>
                         <p class="text-sm mb-3">Analisa bugs, PRs, deploys e inputs manuais para revelar a performance real do seu time — insights baseados em dados, não em suposições.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag tag-analytics">analytics</span>
+                            <span class="tag tag-performance">performance</span>
+                            <span class="tag tag-insights">insights</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Nexus -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--accent);">
+                                <i data-lucide="network" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-dev">Em desenvolvimento</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Nexus</h3>
+                        <p class="text-sm mb-3">Sua infraestrutura, simplificada. Hub visual e low-code para criar pipelines, ambientes e automações — sem overhead.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag tag-infrastructure">infrastructure</span>
+                            <span class="tag tag-devops">devops</span>
+                            <span class="tag tag-automation">automation</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Ask -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--success);">
+                                <i data-lucide="message-circle-question" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-roadmap">Roadmap</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Ask</h3>
+                        <p class="text-sm mb-3">Suporte que parece humano. Abra e resolva solicitações através de conversação natural — sem formulários, sem fricção.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag tag-support">support</span>
+                            <span class="tag tag-helpdesk">helpdesk</span>
+                            <span class="tag tag-ai">ai</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Lens -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--accent);">
+                                <i data-lucide="scan" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-roadmap">Roadmap</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Lens</h3>
+                        <p class="text-sm mb-3">Veja o verdadeiro valor da sua tecnologia. Conecte performance, custo e cultura para entender onde sua tech realmente entrega impacto.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag tag-analytics">analytics</span>
+                            <span class="tag tag-metrics">metrics</span>
+                            <span class="tag tag-insights">insights</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Echo -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--purple);">
+                                <i data-lucide="activity" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-roadmap">Roadmap</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Echo</h3>
+                        <p class="text-sm mb-3">Meça foco, não ruído. Entenda como comunicação e troca de contexto impactam a performance do seu time.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag tag-productivity">productivity</span>
+                            <span class="tag tag-collaboration">collaboration</span>
+                            <span class="tag tag-metrics">metrics</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Pulse -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--warn);">
+                                <i data-lucide="heart-pulse" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-roadmap">Roadmap</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Pulse</h3>
+                        <p class="text-sm mb-3">Conheça o estado real dos seus sistemas — calmo, tenso ou crítico. Uma nova forma de monitorar infraestrutura: focada, visual, humana.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag tag-monitoring">monitoring</span>
+                            <span class="tag tag-observability">observability</span>
+                            <span class="tag tag-infrastructure">infrastructure</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Flow -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--success);">
+                                <i data-lucide="git-branch" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-roadmap">Roadmap</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Flow</h3>
+                        <p class="text-sm mb-3">Do commit à produção — veja onde seu fluxo quebra. Visualize todo o pipeline de entrega e corrija gargalos antes que eles afetem a velocidade.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag tag-devops">devops</span>
+                            <span class="tag tag-cicd">ci/cd</span>
+                            <span class="tag tag-delivery">delivery</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Compass -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--accent);">
+                                <i data-lucide="compass" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-roadmap">Roadmap</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Compass</h3>
+                        <p class="text-sm mb-3">O centro de comando da sua organização tech. Veja seu time, sistemas e custos em uma visão clara — sem ruído, apenas verdade.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag tag-management">management</span>
+                            <span class="tag tag-overview">overview</span>
+                            <span class="tag tag-platform">platform</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Hub -->
+                    <div class="product-card">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="product-icon" style="background-color: var(--accent);">
+                                <i data-lucide="grid-3x3" class="w-5 h-5" style="color: white;"></i>
+                            </div>
+                            <span class="product-badge badge-roadmap">Roadmap</span>
+                        </div>
+                        <h3 class="text-xl mb-2">Hub</h3>
+                        <p class="text-sm mb-3">Seu centro de comando. Acesse todos os produtos e serviços contratados com a thnkng em uma única plataforma — organizada, integrada e sempre atualizada.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag tag-platform">platform</span>
+                            <span class="tag tag-integration">integration</span>
+                        </div>
                     </div>
                 </div>
             </div>
