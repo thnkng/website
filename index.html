@@ -23,7 +23,7 @@
         :root {
             --bg: #FFFFFF;
             --fg: #111111;
-            --muted: #B6B6B6;
+            --muted: #6B6B6B;
             --surface: #EDEDED;
             --accent: #FF006E;
             --warn: #FF7A00;
@@ -527,17 +527,17 @@
         }
     </style>
 </head>
-<body>
+<body id="top">
     <!-- Header -->
-    <header id="top">
+    <header>
         <div class="container">
             <div class="flex flex-col lg:flex-row items-center justify-between py-4 gap-4">
                 <a href="#top" class="logo">thnkng<span style="color:var(--magenta)">.</span>in</a>
                 
                 <nav class="flex flex-wrap items-center justify-center gap-4 lg:gap-8">
-                    <a href="#manifesto" data-nav-link>Manifesto</a>
                     <a href="#o-que-fazemos" data-nav-link>O que fazemos</a>
                     <a href="#como-ajudamos" data-nav-link>Como ajudamos</a>
+                    <a href="#manifesto" data-nav-link>Manifesto</a>
                     <a href="#produtos" data-nav-link>Produtos</a>
                     <a href="#contato" data-nav-link>Contato</a>
                 </nav>
@@ -552,27 +552,102 @@
     
     <main>
         <!-- Hero Section -->
-        <section class="section-spacing" style="background: linear-gradient(180deg, rgba(229, 242, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);">
+        <section class="section-spacing" style="background-color: var(--bg);">
             <div class="container">
                 <div class="max-w-4xl">
-                    <h1 class="mb-6">Tudo que seu time de tech precisa.</h1>
-                    <p class="text-2xl mb-10" style="color: var(--fg); opacity: 0.7; line-height: 1.5;">Uma plataforma. Tudo integrado. Simples assim.</p>
+                    <h1 class="mb-6">Tudo que seu time de tech precisa. Em um só lugar.</h1>
+                    <p class="text-2xl mb-10" style="color: var(--fg); opacity: 0.7; line-height: 1.5;">Ferramentas integradas para FinOps, DevOps e insights. Comece com o que precisa. Adicione quando fizer sentido.</p>
                     <div class="flex flex-wrap gap-4 mb-6">
-                        <a href="#contato" class="btn btn-accent">
-                            <i data-lucide="send" class="w-5 h-5"></i>
+                        <a href="#produtos" class="btn btn-accent">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            Conhecer ferramentas
+                        </a>
+                        <a href="#contato" class="btn btn-secondary">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
                             Falar conosco
                         </a>
-                        <a href="#produtos" class="btn btn-secondary">
-                            <i data-lucide="sparkles" class="w-5 h-5"></i>
-                            Ver produtos
-                        </a>
+                    </div>
+                    <p class="text-sm" style="color: var(--muted); font-weight: 500;">Open source quando possível. Sob medida quando necessário.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- O que fazemos -->
+        <section id="o-que-fazemos" class="section-spacing" style="background-color: var(--bg);">
+            <div class="container">
+                <h2 class="text-center mb-16">Três coisas. Feitas direito.</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card card-design">
+                        <div class="card-icon">
+                            <i data-lucide="palette" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="mb-4">Design</h3>
+                        <ul class="space-y-2">
+                            <li>Interfaces que você não percebe.</li>
+                            <li>Produtos que se explicam sozinhos.</li>
+                            <li>Decisões visuais que viram confiança.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-code">
+                        <div class="card-icon">
+                            <i data-lucide="code-2" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="mb-4">Código</h3>
+                        <ul class="space-y-2">
+                            <li>Simples. Rápido. Escalável.</li>
+                            <li>Times mais produtivos.</li>
+                            <li>Performance não é opcional.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-purpose">
+                        <div class="card-icon">
+                            <i data-lucide="compass" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="mb-4">Propósito</h3>
+                        <ul class="space-y-2">
+                            <li>Estratégia antes de features.</li>
+                            <li>Apenas o que importa.</li>
+                            <li>Impacto real, não métricas de vaidade.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
         
+        <!-- Como ajudamos -->
+        <section id="como-ajudamos" class="section-spacing" style="background-color: var(--surface);">
+            <div class="container">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="mb-12">Menos caos. Mais entrega.</h2>
+                    <ul class="space-y-4 text-lg mb-8">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="target" class="w-6 h-6 mt-1" style="color: var(--accent); flex-shrink: 0;"></i>
+                            <span>Transformamos ideias confusas em produtos claros.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="git-merge" class="w-6 h-6 mt-1" style="color: var(--purple); flex-shrink: 0;"></i>
+                            <span>Eliminamos complexidade desnecessária.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="layers" class="w-6 h-6 mt-1" style="color: var(--success); flex-shrink: 0;"></i>
+                            <span>Criamos sistemas que escalam sem quebrar.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="package" class="w-6 h-6 mt-1" style="color: var(--warn); flex-shrink: 0;"></i>
+                            <span>Evoluímos sua tecnologia sem parar o time.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="trending-up" class="w-6 h-6 mt-1" style="color: var(--accent); flex-shrink: 0;"></i>
+                            <span>Aceleramos entregas sem atalhos.</span>
+                        </li>
+                    </ul>
+                    <p class="text-xl font-medium">Rápido. Simples. Impecável.</p>
+                </div>
+            </div>
+        </section>
+        
         <!-- Manifesto -->
-        <section id="manifesto" class="section-spacing" style="background: linear-gradient(135deg, var(--fg) 0%, #2a2a2a 100%); color: var(--bg);">
+        <section id="manifesto" class="section-spacing" style="background-color: var(--fg); color: var(--bg);">
             <div class="container">
                 <div class="max-w-4xl mx-auto">
                     <h2 class="text-center mb-16" style="color: var(--bg);">Manifesto thnkng.in</h2>
@@ -638,86 +713,12 @@
             </div>
         </section>
         
-        <!-- O que fazemos -->
-        <section id="o-que-fazemos" class="section-spacing">
-            <div class="container">
-                <h2 class="text-center mb-16">Três coisas. Feitas direito.</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="card card-design">
-                        <div class="card-icon">
-                            <i data-lucide="palette" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="mb-4">Design</h3>
-                        <ul class="space-y-2">
-                            <li>Interfaces que você não percebe.</li>
-                            <li>Produtos que se explicam.</li>
-                            <li>Cada pixel importa.</li>
-                        </ul>
-                    </div>
-                    <div class="card card-code">
-                        <div class="card-icon">
-                            <i data-lucide="code-2" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="mb-4">Código</h3>
-                        <ul class="space-y-2">
-                            <li>Simples. Rápido. Escalável.</li>
-                            <li>Times mais produtivos.</li>
-                            <li>Performance não é opcional.</li>
-                        </ul>
-                    </div>
-                    <div class="card card-purpose">
-                        <div class="card-icon">
-                            <i data-lucide="compass" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="mb-4">Propósito</h3>
-                        <ul class="space-y-2">
-                            <li>Menos features. Mais foco.</li>
-                            <li>Apenas o que importa.</li>
-                            <li>Impacto real.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Como ajudamos -->
-        <section id="como-ajudamos" class="section-spacing" style="background: linear-gradient(180deg, rgba(229, 242, 255, 0.2) 0%, rgba(243, 229, 255, 0.2) 100%);">
-            <div class="container">
-                <div class="max-w-3xl mx-auto">
-                    <h2 class="mb-12">Como ajudamos.</h2>
-                    <ul class="space-y-4 text-lg mb-8">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="target" class="w-6 h-6 mt-1" style="color: var(--accent); flex-shrink: 0;"></i>
-                            <span>Transformamos ideias confusas em produtos claros.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="git-merge" class="w-6 h-6 mt-1" style="color: var(--purple); flex-shrink: 0;"></i>
-                            <span>Eliminamos complexidade desnecessária.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="layers" class="w-6 h-6 mt-1" style="color: var(--success); flex-shrink: 0;"></i>
-                            <span>Criamos sistemas que escalam.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="package" class="w-6 h-6 mt-1" style="color: var(--warn); flex-shrink: 0;"></i>
-                            <span>Evoluímos sua tecnologia sem parar o time.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="trending-up" class="w-6 h-6 mt-1" style="color: var(--accent); flex-shrink: 0;"></i>
-                            <span>Aceleramos entregas. Sem atalhos.</span>
-                        </li>
-                    </ul>
-                    <p class="text-xl font-medium">Rápido. Simples. Impecável.</p>
-                </div>
-            </div>
-        </section>
-        
         <!-- Produtos -->
-        <section id="produtos" class="section-spacing">
+        <section id="produtos" class="section-spacing" style="background-color: var(--bg);">
             <div class="container">
                 <div class="max-w-4xl mx-auto mb-12 text-center">
-                    <h2 class="mb-6">Ferramentas que simplesmente funcionam.</h2>
-                    <p class="text-xl" style="color: var(--muted);">Para times que querem fazer mais. Com menos.</p>
+                    <h2 class="mb-6">O que estamos construindo.</h2>
+                    <p class="text-xl" style="color: var(--muted);">Ferramentas que simplificam tecnologia. Prontas quando estiverem prontas.</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -733,7 +734,7 @@
                             </span>
                         </div>
                         <h3 class="text-xl mb-2">Coins</h3>
-                        <p class="text-sm mb-3">Controle de gastos. SaaS e cloud em um só lugar. Veja desperdício. Economize.</p>
+                        <p class="text-sm mb-3">FinOps simplificado que unifica gastos SaaS e cloud, revelando desperdício e mostrando economia clara e acionável.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="tag tag-finance">finance</span>
                             <span class="tag tag-saas">saas</span>
@@ -747,7 +748,6 @@
                             <div class="product-icon">
                                 <i data-lucide="brain" class="w-8 h-8" style="color: var(--purple); stroke-width: 1.5;"></i>
                             </div>
-                            <span class="product-badge badge-dev">Em desenvolvimento</span>
                         </div>
                         <h3 class="text-xl mb-2">Minder</h3>
                         <p class="text-sm mb-3">Acompanhe o time de tech. Bugs, PRs, deploys. Dados reais de produtividade.</p>
@@ -764,7 +764,6 @@
                             <div class="product-icon">
                                 <i data-lucide="network" class="w-8 h-8" style="color: #FFD60A; stroke-width: 1.5;"></i>
                             </div>
-                            <span class="product-badge badge-dev">Em desenvolvimento</span>
                         </div>
                         <h3 class="text-xl mb-2">Nexus</h3>
                         <p class="text-sm mb-3">Monte infraestrutura visual. Crie pipelines e ambientes sem código.</p>
@@ -781,7 +780,6 @@
                             <div class="product-icon">
                                 <i data-lucide="message-circle-question" class="w-8 h-8" style="color: var(--success); stroke-width: 1.5;"></i>
                             </div>
-                            <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Ask</h3>
                         <p class="text-sm mb-3">Atendimento por conversa. Abra e resolva tickets naturalmente. Sem formulários.</p>
@@ -798,7 +796,6 @@
                             <div class="product-icon">
                                 <i data-lucide="scan" class="w-8 h-8" style="color: #007AFF; stroke-width: 1.5;"></i>
                             </div>
-                            <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Lens</h3>
                         <p class="text-sm mb-3">Quanto sua tech vale? Conecte custo, performance e impacto. Veja o ROI real.</p>
@@ -815,7 +812,6 @@
                             <div class="product-icon">
                                 <i data-lucide="activity" class="w-8 h-8" style="color: #9742C5; stroke-width: 1.5;"></i>
                             </div>
-                            <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Echo</h3>
                         <p class="text-sm mb-3">Comunicação completa. Interna e externa. Disparo de e-mail, mensagens, tudo.</p>
@@ -832,7 +828,6 @@
                             <div class="product-icon">
                                 <i data-lucide="heart-pulse" class="w-8 h-8" style="color: #FF3B30; stroke-width: 1.5;"></i>
                             </div>
-                            <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Pulse</h3>
                         <p class="text-sm mb-3">Monitoramento humano. Veja se seus sistemas estão calmos, tensos ou críticos.</p>
@@ -849,7 +844,6 @@
                             <div class="product-icon">
                                 <i data-lucide="git-branch" class="w-8 h-8" style="color: #30D158; stroke-width: 1.5;"></i>
                             </div>
-                            <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Flow</h3>
                         <p class="text-sm mb-3">Acompanhe código até produção. Veja gargalos no pipeline. Entregue mais rápido.</p>
@@ -866,7 +860,6 @@
                             <div class="product-icon">
                                 <i data-lucide="compass" class="w-8 h-8" style="color: #32ADE6; stroke-width: 1.5;"></i>
                             </div>
-                            <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Compass</h3>
                         <p class="text-sm mb-3">Painel executivo de tech. Status geral, times, custos. Tudo em uma tela.</p>
@@ -883,7 +876,6 @@
                             <div class="product-icon">
                                 <i data-lucide="inbox" class="w-8 h-8" style="color: #FF453A; stroke-width: 1.5;"></i>
                             </div>
-                            <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Thread</h3>
                         <p class="text-sm mb-3">Uma caixa de entrada para tudo. Email, tickets, notificações. Conectado.</p>
@@ -899,7 +891,6 @@
                             <div class="product-icon">
                                 <i data-lucide="hammer" class="w-8 h-8" style="color: #64D2FF; stroke-width: 1.5;"></i>
                             </div>
-                            <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Forge</h3>
                         <p class="text-sm mb-3">Gerencie produto e tech. Demandas, tarefas, documentação. Tudo integrado.</p>
@@ -915,7 +906,6 @@
                             <div class="product-icon">
                                 <i data-lucide="grid-3x3" class="w-8 h-8" style="color: #5E5CE6; stroke-width: 1.5;"></i>
                             </div>
-                            <span class="product-badge badge-roadmap">Roadmap</span>
                         </div>
                         <h3 class="text-xl mb-2">Hub</h3>
                         <p class="text-sm mb-3">Sua plataforma completa. Todos os produtos thnkng.in integrados em um só lugar.</p>
@@ -928,14 +918,90 @@
             </div>
         </section>
         
-        <!-- Antecipe o roadmap -->
-        <section class="section-spacing" style="background-color: var(--fg); color: var(--bg);">
+        <!-- Produtos -->
+        <section id="produtos" class="section-spacing" style="background-color: var(--bg);">
             <div class="container">
-                <div class="max-w-2xl mx-auto text-center">
-                    <h2 class="mb-6" style="color: var(--bg);">Precisa de algo específico?</h2>
-                    <p class="text-xl mb-12" style="opacity: 0.8;">Se você precisa de uma ferramenta que ainda não existe, podemos criar. Simples assim.</p>
-                    
-                    <a href="mailto:hello@thnkng.in?subject=Projeto%20Específico" class="btn btn-accent inline-flex">
+                <div class="max-w-4xl mx-auto mb-12 text-center">
+                    <h2 class="mb-6">O que estamos construindo.</h2>
+                    <p class="text-xl" style="color: var(--muted);">Ferramentas que simplificam tecnologia. Prontas quando estiverem prontas.</p>
+                </div>
+            <div class="container">
+                <div class="max-w-3xl mx-auto text-center">
+                    <div class="flex justify-center mb-6">
+                        <div class="product-icon" style="width: 64px; height: 64px; background-color: rgba(94, 92, 230, 0.2);">
+                            <i data-lucide="grid-3x3" class="w-10 h-10" style="color: #5E5CE6; stroke-width: 1.5;"></i>
+                        </div>
+                    </div>
+                    <h2 class="mb-6" style="color: var(--bg);">Uma plataforma. Múltiplas soluções.</h2>
+                    <p class="text-2xl mb-8" style="opacity: 0.9;">Todas as ferramentas conectadas. Dados integrados. Experiência unificada.</p>
+                    <p class="text-lg mb-12" style="opacity: 0.8; line-height: 1.7;">
+                        Não importa se você começa com Coins, Minder ou Nexus. Tudo funciona junto. Um login. Uma interface. Dados que conversam entre si.<br><br>
+                        Escolha as ferramentas que fazem sentido para o seu momento. Adicione mais quando precisar.
+                    </p>
+                    <p class="text-sm mb-8" style="color: var(--bg); opacity: 0.8; font-weight: 500;">A plataforma é incluída. Você paga pelas ferramentas que usa.</p>
+                    <a href="#contato" class="btn" style="background-color: transparent; border: 2px solid var(--bg); color: var(--bg);">
+                        <i data-lucide="info" class="w-5 h-5"></i>
+                        Saber mais
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Números Reais -->
+        <section class="section-spacing" style="background-color: var(--bg);">
+            <div class="container">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <div class="text-center">
+                        <i data-lucide="zap" class="w-8 h-8 mx-auto mb-4" style="color: var(--fg);"></i>
+                        <h3 class="text-lg mb-2">Velocidade</h3>
+                        <p class="text-sm" style="color: var(--muted);">Resposta em menos de 4h úteis</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="shield-check" class="w-8 h-8 mx-auto mb-4" style="color: var(--fg);"></i>
+                        <h3 class="text-lg mb-2">Confiabilidade</h3>
+                        <p class="text-sm" style="color: var(--muted);">99.97% uptime em produção</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="heart" class="w-8 h-8 mx-auto mb-4" style="color: var(--fg);"></i>
+                        <h3 class="text-lg mb-2">Transparência</h3>
+                        <p class="text-sm" style="color: var(--muted);">Open source quando faz sentido</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-lucide="users" class="w-8 h-8 mx-auto mb-4" style="color: var(--fg);"></i>
+                        <h3 class="text-lg mb-2">Suporte</h3>
+                        <p class="text-sm" style="color: var(--muted);">Humanos reais. Sem chatbot.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Software sob medida -->
+        <section class="section-spacing" style="background-color: var(--surface);">
+            <div class="container">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="mb-6">Quando precisar de algo único.</h2>
+                    <p class="text-lg mb-8" style="line-height: 1.7;">
+                        Construímos soluções personalizadas com o mesmo padrão de excelência de tudo que fazemos.
+                    </p>
+                    <div class="max-w-2xl mx-auto mb-10">
+                        <p class="text-base mb-4" style="opacity: 0.8;">Regras simples:</p>
+                        <ul class="text-left space-y-3" style="opacity: 0.8;">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-5 h-5 mt-1" style="color: var(--success); flex-shrink: 0;"></i>
+                                <span>Não vendemos horas. Assumimos problemas.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-5 h-5 mt-1" style="color: var(--success); flex-shrink: 0;"></i>
+                                <span>Projetos curados. Poucos. Estratégicos.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-5 h-5 mt-1" style="color: var(--success); flex-shrink: 0;"></i>
+                                <span>Se virar referência reutilizável, melhor ainda.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="text-xl font-medium mb-8">Clareza, velocidade e impacto real.</p>
+                    <a href="#contato" class="btn btn-accent">
                         <i data-lucide="rocket" class="w-5 h-5"></i>
                         Falar sobre projeto
                     </a>
@@ -944,18 +1010,66 @@
         </section>
         
         <!-- Contato -->
-        <section id="contato" class="section-spacing" style="background: linear-gradient(180deg, rgba(229, 242, 255, 0.2) 0%, rgba(243, 229, 255, 0.2) 100%);">
+        <section id="contato" class="section-spacing" style="background-color: var(--bg);">
             <div class="container">
-                <div class="max-w-2xl mx-auto text-center">
-                    <h2 class="mb-6">Vamos começar.</h2>
-                    <p class="text-xl mb-12">Simples. Rápido. Impecável.</p>
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="mb-6">Três formas de começar.</h2>
+                        <p class="text-xl" style="color: var(--muted);">Escolha como quer trabalhar conosco.</p>
+                    </div>
                     
-                    <a href="mailto:hello@thnkng.in" class="btn btn-accent inline-flex">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                        hello@thnkng.in
-                    </a>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                        <!-- Opção 1: Conhecer Plataforma -->
+                        <div class="card" style="text-align: center;">
+                            <div class="flex justify-center mb-4">
+                                <div class="product-icon" style="background-color: var(--accent-light);">
+                                    <i data-lucide="grid-3x3" class="w-7 h-7" style="color: var(--accent);"></i>
+                                </div>
+                            </div>
+                            <h3 class="mb-3">Conhecer Plataforma</h3>
+                            <p class="text-sm mb-6" style="color: var(--muted);">Veja como as ferramentas funcionam juntas para o seu time.</p>
+                            <a href="mailto:hello@thnkng.in?subject=Conhecer%20Plataforma" class="btn btn-accent" style="width: 100%;">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                Agendar demo
+                            </a>
+                        </div>
+                        
+                        <!-- Opção 2: Começar com Ferramenta -->
+                        <div class="card" style="text-align: center;">
+                            <div class="flex justify-center mb-4">
+                                <div class="product-icon" style="background-color: var(--purple-light);">
+                                    <i data-lucide="package" class="w-7 h-7" style="color: var(--purple);"></i>
+                                </div>
+                            </div>
+                            <h3 class="mb-3">Começar com Ferramenta</h3>
+                            <p class="text-sm mb-6" style="color: var(--muted);">Coins, Minder ou outra solução específica para sua necessidade.</p>
+                            <a href="mailto:hello@thnkng.in?subject=Começar%20com%20Ferramenta" class="btn btn-purple" style="width: 100%;">
+                                <i data-lucide="rocket" class="w-5 h-5"></i>
+                                Testar agora
+                            </a>
+                        </div>
+                        
+                        <!-- Opção 3: Projeto Sob Medida -->
+                        <div class="card" style="text-align: center;">
+                            <div class="flex justify-center mb-4">
+                                <div class="product-icon" style="background-color: var(--surface);">
+                                    <i data-lucide="code-2" class="w-7 h-7" style="color: var(--fg);"></i>
+                                </div>
+                            </div>
+                            <h3 class="mb-3">Projeto Sob Medida</h3>
+                            <p class="text-sm mb-6" style="color: var(--muted);">Solução personalizada quando as ferramentas prontas não atendem.</p>
+                            <a href="mailto:hello@thnkng.in?subject=Projeto%20Sob%20Medida" class="btn btn-secondary" style="width: 100%;">
+                                <i data-lucide="message-square" class="w-5 h-5"></i>
+                                Falar sobre projeto
+                            </a>
+                        </div>
+                    </div>
                     
-                    <p class="caption mt-12" style="opacity: 0.6;">Às vezes construímos sob medida. Quando faz sentido.</p>
+                    <div class="text-center">
+                        <p class="text-lg mb-3">Ou envie um email direto:</p>
+                        <a href="mailto:hello@thnkng.in" class="text-2xl font-medium" style="color: var(--accent); text-decoration: none;">hello@thnkng.in</a>
+                        <p class="text-sm mt-4" style="color: var(--muted); font-weight: 500;">Resposta em menos de 4 horas úteis.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -964,9 +1078,44 @@
     <!-- Footer -->
     <footer class="py-16" style="background-color: var(--fg); color: var(--bg);">
         <div class="container">
-            <div class="text-center space-y-2">
-                <p class="font-medium">thnkng.in</p>
-                <p class="caption" style="opacity: 0.6;">© 2026 thnkng.in</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="text-sm font-semibold mb-4" style="color: var(--bg); opacity: 0.9;">Produtos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#coins" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Coins</a></li>
+                        <li><a href="#produtos" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Minder</a></li>
+                        <li><a href="#produtos" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Nexus</a></li>
+                        <li><a href="#produtos" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Ver todos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold mb-4" style="color: var(--bg); opacity: 0.9;">Empresa</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#manifesto" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Manifesto</a></li>
+                        <li><a href="#o-que-fazemos" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Como trabalhamos</a></li>
+                        <li><a href="#como-ajudamos" class="text-sm" style="color: var(--bg); opacity: 0.7; text-decoration: none;">Como ajudamos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold mb-4" style="color: var(--bg); opacity: 0.9;">Recursos</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-sm" style="color: var(--bg); opacity: 0.5;">Changelog (em breve)</span></li>
+                        <li><span class="text-sm" style="color: var(--bg); opacity: 0.5;">Documentação (em breve)</span></li>
+                        <li><span class="text-sm" style="color: var(--bg); opacity: 0.5;">Status (em breve)</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold mb-4" style="color: var(--bg); opacity: 0.9;">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-sm" style="color: var(--bg); opacity: 0.5;">Termos (em breve)</span></li>
+                        <li><span class="text-sm" style="color: var(--bg); opacity: 0.5;">Privacidade (em breve)</span></li>
+                        <li><span class="text-sm" style="color: var(--bg); opacity: 0.5;">SLA (em breve)</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center pt-8" style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <p class="font-medium mb-2">thnkng.in. Design, código e propósito.</p>
+                <p class="text-sm" style="opacity: 0.7;">© 2026 thnkng.in. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
